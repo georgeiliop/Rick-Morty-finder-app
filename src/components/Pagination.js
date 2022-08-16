@@ -1,65 +1,46 @@
 import React from "react";
-import { useEffect } from "react";
+import ReactPaginate from "react-paginate";
 
-const Pagination = (props) => {
-  const { characters, pageArray, setPageArray, currentPage } = props;
-  useEffect(() => {
-    console.log(characters?.info?.pages);
-    setPageArray([]);
-    const pageNum = characters?.info?.pages;
-    for (let i = 0; i < pageNum; i++) {
-      setPageArray((prevState) => [...prevState, i]);
-    }
-  }, [characters, setPageArray]);
-
-  const pag = pageArray.map((page) => {
-    return (
-      <li className="page-item" key={page}>
-        <a className="page-link" href="#">
-          {page}
-        </a>
-      </li>
-    );
-  });
+const Pagination = ({ setCurrentPage, info }) => {
+  // const getNext = () => {
+  //   setCurrentPage((prev) => prev + 1);
+  // };
+  // const getPrev = () => {
+  //   setCurrentPage((prev) => prev - 1);
+  //};
   return (
     <div className="d-flex justify-content-center flex-row">
-      {characters?.info?.pages < 7 ? (
-        <div className="d-flex justify-content-center flex-row">{pag} </div>
-      ) : (
-        <div className="d-flex justify-content-center flex-row">
-          <li className="page-item">
-            <a className="page-link" href="#">
-              {currentPage}
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              {currentPage + 1}
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              {currentPage + 2}
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              {currentPage + 3}
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              ...
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              {characters?.info?.pages}
-            </a>
-          </li>
-        </div>
-      )}
+      <ReactPaginate
+        pageCount={info?.pages}
+        className="pagination d-flex justify-content-center"
+        previousLabel="Prev"
+        previousClassName="btn btn-success"
+        nextClassName="btn btn-success"
+        nextLinkClassName="text-white link--styles"
+        previousLinkClassName="text-white link--styles"
+        pageClassName="page-item "
+        pageLinkClassName="page-link text-success"
+        activeClassName="active bg-success"
+        activeLinkClassName="bg-success text-white border-0"
+        onPageChange={(data) => setCurrentPage(data.selected + 1)}
+      />
     </div>
+    // <div className="d-flex justify-content-center flex-row">
+    //   <nav aria-label="Page navigation example ">
+    //     <ul className="pagination d-flex justify-content-center">
+    //       <li className="page-item ">
+    //         <a className="page-link text-success" onClick={getPrev}>
+    //           Previous
+    //         </a>
+    //       </li>
+    //       <li className="page-item ">
+    //         <a className="page-link text-success" onClick={getNext}>
+    //           Next
+    //         </a>
+    //       </li>
+    //     </ul>
+    //   </nav>
+    // </div>
   );
 };
 

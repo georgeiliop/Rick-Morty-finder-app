@@ -10,8 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [query, setQuery] = useState("");
-  const [pageArray, setPageArray] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchFn = async () => {
@@ -19,7 +18,7 @@ function App() {
 
       try {
         const res = await fetch(
-          `https://rickandmortyapi.com/api/character/?name=${query}`
+          `https://rickandmortyapi.com/api/character/?page=${currentPage}&name=${query}`
         );
         const data = await res.json();
         setCharacters(data);
@@ -30,34 +29,13 @@ function App() {
       }
     };
     fetchFn();
-  }, [query]);
-
-  const getNextPage = () => {
-    if (characters.info.next != null) {
-      fetch(`${characters.info.next}`)
-        .then((response) => response.json())
-        .then((character) => setCharacters(character));
-    }
-    if (currentPage < characters.info.pages - 4)
-      setCurrentPage((prev) => prev + 1);
-  };
-
-  const getPrevPage = () => {
-    if (characters.info.prev != null) {
-      fetch(`${characters.info.prev}`)
-        .then((response) => response.json())
-        .then((character) => setCharacters(character));
-    }
-    if (currentPage > 0) setCurrentPage((prev) => prev - 1);
-  };
+  }, [query, currentPage]);
 
   if (isError) return <div>No results</div>;
 
   const cardList = characters?.results?.map((character) => {
     return <Card key={character.id} {...character} />;
   });
-
-  console.log(pageArray);
 
   return (
     <div className="App">
@@ -66,27 +44,12 @@ function App() {
         query={query}
         setCurrentPage={setCurrentPage}
       />
-      <nav aria-label="Page navigation example ">
-        <ul className="pagination d-flex justify-content-center">
-          <li className="page-item">
-            <a className="page-link" onClick={getPrevPage}>
-              Previous
-            </a>
-          </li>
-          <Pagination
-            pageArray={pageArray}
-            setPageArray={setPageArray}
-            characters={characters}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
-          <li className="page-item">
-            <a className="page-link" onClick={getNextPage}>
-              Next
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Pagination
+        characters={characters}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        info={characters?.info}
+      />
       {isError ? <div>error</div> : <div></div>}
       {isLoading || !characters ? (
         <div>w8 bro</div>

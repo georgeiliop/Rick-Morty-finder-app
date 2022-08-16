@@ -92,3 +92,14 @@
   background-color: #d0f781;
   margin-bottom: 0px;
 }
+.page-item {
+  margin: 3px;
+}
+
+.btn--text--style {
+  color: aliceblue;
+}
+
+.link--styles {
+  text-decoration: none;
+}

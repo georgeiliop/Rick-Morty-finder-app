@@ -22,7 +22,7 @@ const Navbar = (props) => {
             }}
             value={props.query}
           />
-          <button className="btn btn-primary">Search</button>
+          <button className="btn btn-success">Search</button>
         </form>
       </div>
     </nav>
