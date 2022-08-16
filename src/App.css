@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: "Poppins", sans-serif;
+  background-color: #d0f781;
 }
 
 .character--card {
@@ -102,4 +103,7 @@
 
 .link--styles {
   text-decoration: none;
+}
+.pag--style {
+  background-color: #d0f781;
 }

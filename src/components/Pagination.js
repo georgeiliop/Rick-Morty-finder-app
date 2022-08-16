@@ -9,7 +9,7 @@ const Pagination = ({ setCurrentPage, info }) => {
   //   setCurrentPage((prev) => prev - 1);
   //};
   return (
-    <div className="d-flex justify-content-center flex-row">
+    <div className="d-flex justify-content-center flex-row pag--style container-fluid">
       <ReactPaginate
         pageCount={info?.pages}
         className="pagination d-flex justify-content-center"
