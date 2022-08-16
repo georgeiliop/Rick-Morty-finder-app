@@ -12,7 +12,7 @@ const Pagination = ({ setCurrentPage, info }) => {
         nextClassName="btn btn-success"
         nextLinkClassName="text-white link--styles"
         previousLinkClassName="text-white link--styles"
-        pageClassName="page-item "
+        pageClassName="page-item"
         pageLinkClassName="page-link text-success"
         activeClassName="active bg-success"
         activeLinkClassName="bg-success text-white border-0"

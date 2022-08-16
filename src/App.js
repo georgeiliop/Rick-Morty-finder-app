@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import Card from "./components/Card.js";
-import Navbar from "./components/Navbar";
+import Search from "./components/Search";
 import Pagination from "./components/Pagination";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar
+      <Search
         setQuery={setQuery}
         query={query}
         setCurrentPage={setCurrentPage}
