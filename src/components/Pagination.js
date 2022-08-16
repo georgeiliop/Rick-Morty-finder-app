@@ -2,12 +2,6 @@ import React from "react";
 import ReactPaginate from "react-paginate";
 
 const Pagination = ({ setCurrentPage, info }) => {
-  // const getNext = () => {
-  //   setCurrentPage((prev) => prev + 1);
-  // };
-  // const getPrev = () => {
-  //   setCurrentPage((prev) => prev - 1);
-  //};
   return (
     <div className="d-flex justify-content-center flex-row pag--style container-fluid">
       <ReactPaginate
@@ -25,22 +19,6 @@ const Pagination = ({ setCurrentPage, info }) => {
         onPageChange={(data) => setCurrentPage(data.selected + 1)}
       />
     </div>
-    // <div className="d-flex justify-content-center flex-row">
-    //   <nav aria-label="Page navigation example ">
-    //     <ul className="pagination d-flex justify-content-center">
-    //       <li className="page-item ">
-    //         <a className="page-link text-success" onClick={getPrev}>
-    //           Previous
-    //         </a>
-    //       </li>
-    //       <li className="page-item ">
-    //         <a className="page-link text-success" onClick={getNext}>
-    //           Next
-    //         </a>
-    //       </li>
-    //     </ul>
-    //   </nav>
-    // </div>
   );
 };
 
