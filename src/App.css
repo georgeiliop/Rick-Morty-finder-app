@@ -117,7 +117,7 @@
 }
 
 .alive {
-  background-color: green;
+  background-color: rgb(73, 151, 73);
   border-radius: 8px;
   padding: 2px 8px;
   position: absolute;
@@ -127,7 +127,7 @@
 }
 
 .else {
-  background-color: rgb(226, 46, 46);
+  background-color: rgb(216, 63, 63);
   border-radius: 8px;
   padding: 2px 8px;
   position: absolute;
