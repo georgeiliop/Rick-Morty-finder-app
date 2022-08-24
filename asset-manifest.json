@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Rick-Morty-finder-app/static/css/main.0dda5af0.css",
+    "main.css": "/Rick-Morty-finder-app/static/css/main.3954389e.css",
     "main.js": "/Rick-Morty-finder-app/static/js/main.83253452.js",
     "static/js/787.0ab6cf9c.chunk.js": "/Rick-Morty-finder-app/static/js/787.0ab6cf9c.chunk.js",
     "static/media/background.jpg": "/Rick-Morty-finder-app/static/media/background.40e277e28bdcfd7614fa.jpg",
     "index.html": "/Rick-Morty-finder-app/index.html",
-    "main.0dda5af0.css.map": "/Rick-Morty-finder-app/static/css/main.0dda5af0.css.map",
+    "main.3954389e.css.map": "/Rick-Morty-finder-app/static/css/main.3954389e.css.map",
     "main.83253452.js.map": "/Rick-Morty-finder-app/static/js/main.83253452.js.map",
     "787.0ab6cf9c.chunk.js.map": "/Rick-Morty-finder-app/static/js/787.0ab6cf9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0dda5af0.css",
+    "static/css/main.3954389e.css",
     "static/js/main.83253452.js"
   ]
 }
