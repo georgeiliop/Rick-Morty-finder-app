@@ -1,3 +1,7 @@
+# Rick and Morty finder App
+
+A simple Rick and morty finder app from the Rick&Morty API
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
