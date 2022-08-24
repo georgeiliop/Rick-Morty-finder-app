@@ -56,10 +56,18 @@
 }
 
 .card--text {
-  margin-left: 15px;
+  margin-left: 12px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
+  position: relative;
+}
+
+@media all and (max-width: 600px) {
+  .card--text {
+    padding: 15px;
+  }
 }
 
 .characters--container {
@@ -106,4 +114,42 @@
 }
 .pag--style {
   background-color: #d0f781;
+}
+
+.alive {
+  background-color: green;
+  border-radius: 8px;
+  padding: 2px 8px;
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 10px;
+  top: -15px;
+}
+
+.else {
+  background-color: rgb(226, 46, 46);
+  border-radius: 8px;
+  padding: 2px 8px;
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 10px;
+  top: -15px;
+}
+
+@media all and (max-width: 600px) {
+  .alive {
+    top: 10px;
+  }
+  .else {
+    top: 10px;
+  }
+}
+
+.name {
+  font-size: 28px;
+  text-align: start;
+}
+
+.info--text {
+  font-size: 21px;
 }

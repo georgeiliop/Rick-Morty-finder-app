@@ -9,10 +9,13 @@ const Card = (props) => {
         src={props.image}
       ></img>
       <div className="card--text container">
-        <h1 className="">{props.name}</h1>
-        <h3>
+        <span className={props.status === "Alive" ? "alive" : "else"}>
+          {props.status}
+        </span>
+        <h1 className="name">{props.name}</h1>
+        <h3 className="info--text">
           <span>🟤</span>
-          {props.status}&#160;{props.species}&#160;{props.gender}
+          &#160;{props.species}&#160;{props.gender}
         </h3>{" "}
         <span>Location</span>
         <a href={props.location.url}>{props.location.name}</a>
